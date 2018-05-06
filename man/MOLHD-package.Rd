@@ -11,8 +11,8 @@ The MOLHD package provides useful and efficient functions for generating the opt
 \tabular{ll}{
 Package: \tab MOLHD\cr
 Type: \tab Package\cr
-Version: \tab 0.1\cr
-Date: \tab 2017-11-06\cr
+Version: \tab 0.2\cr
+Date: \tab 2018-5-6\cr
 Lisense: \tab LGPL\cr
 }
 This package contains functions for generating the optimal maximin distance designs, maximum projection designs and minimax distance designs for low dimensions within the class of Latin hypercube designs (LHDs). This packages also contains functions for generating designs on the Pareto front of each two of the three criteria as maximin distance criterion, minimax distance criterion, and maximum projection criterion. This package also contains functions to compute each criterion for a random Latin hypercube design.

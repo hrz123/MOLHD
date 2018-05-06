@@ -56,8 +56,8 @@ alg4 <- function(n, p, wtset, crlim, num, temp0=0,times = 300, maxiter=1e+06)
 	pfdes = desmat0 = desmat
 	desval0 = Mm(desmat0)
 	
-	I=iterpc(num,p,ordered = TRUE,replace = TRUE)
-	nodes=(getall(I)-0.5)/num # generate grid nodes matrix
+	I=permutations(num,p,replace = TRUE)
+	nodes=(I-0.5)/num # generate grid nodes matrix
 	
 	nodeDist=rdist(nodes,desmat0)
 	dist=apply(nodeDist,1,min)
@@ -200,8 +200,8 @@ alg5 <- function(n, p, wtset, crlim, num, temp0=0,times = 300, maxiter=1e+06)
 	pfdes = desmat0 = desmat
 	desval0 = mp(desmat0)
 	
-	I=iterpc(num,p,ordered = TRUE,replace = TRUE)
-	nodes=(getall(I)-0.5)/num # generate grid nodes matrix
+	I=permutations(num,p,replace = TRUE)
+	nodes=(I-0.5)/num # generate grid nodes matrix
 	
 	nodeDist=rdist(nodes,desmat0)
 	dist=apply(nodeDist,1,min)

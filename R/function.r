@@ -1,6 +1,5 @@
 rdist <- fields::rdist
-iterpc <- iterpc::iterpc
-getall <- iterpc::getall
+permutations <- arrangements::permutations
 runif <- stats::runif
 
 
@@ -50,8 +49,8 @@ miM <- function(D, num=50)
 		stop("Error: D is not a matrix")
 	}
 	p=ncol(D)
-	I=iterpc(num,p,ordered = TRUE,replace = TRUE)
-	nodes=(getall(I)-0.5)/num # generate grid nodes matrix
+	I=permutations(num,p,replace = TRUE)
+	nodes=(I-0.5)/num # generate grid nodes matrix
 
 	nodeDist=rdist(nodes,D)
 	dist=apply(nodeDist,1,min)
@@ -103,8 +102,8 @@ miMLHD <- function(n, p, num=50, temp0=0,nstarts=1, times=300, maxiter=1e+06)
 	{
 		D = LHD(n,p)[[2]]
 
-		I=iterpc(num,p,ordered = TRUE,replace = TRUE)
-		nodes=(getall(I)-0.5)/num # generate grid nodes matrix
+		I=permutations(num,p,replace = TRUE)
+		nodes=(I-0.5)/num # generate grid nodes matrix
 
 		nodeDist=rdist(nodes,D)
 		dist=apply(nodeDist,1,min)
@@ -560,8 +559,8 @@ alg3 <- function(n, p, wtset, crlim, num, temp0=0,times = 300, maxiter=1e+06)
 	pfdes = desmat0 = desmat
 	desval0 = evalfunc2(desmat0)
 
-	I=iterpc(num,p,ordered = TRUE,replace = TRUE)
-	nodes=(getall(I)-0.5)/num # generate grid nodes matrix
+	I=permutations(num,p,replace = TRUE)
+	nodes=(I-0.5)/num # generate grid nodes matrix
 
 	nodeDist=rdist(nodes,desmat0)
 	dist=apply(nodeDist,1,min)
